@@ -46,8 +46,8 @@
         "description": "用视觉叙事记录城市街道上的坦率时刻"
       },
       "ecommerce": {
-        "title": "电子商务平台",
-        "description": "具有购物车、支付网关和管理仪表板的全栈电子商务网站"
+        "title": "全栈电子商务网站",
+        "description": "用于库存管理的SaaS平台，具有用户友好的仪表板和全面的功能"
       },
       "event": {
         "title": "活动纪实",

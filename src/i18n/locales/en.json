@@ -46,8 +46,8 @@
         "description": "Documentation of candid moments on city streets with visual storytelling"
       },
       "ecommerce": {
-        "title": "E-Commerce Platform",
-        "description": "Full-stack e-commerce website with shopping cart, payment gateway, and admin dashboard"
+        "title": "Saas Platform",
+        "description": "SaaS platform for inventory management with user-friendly dashboard and comprehensive features"
       },
       "event": {
         "title": "Event Documentation",

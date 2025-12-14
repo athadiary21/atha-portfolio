@@ -46,8 +46,8 @@
         "description": "Documentation de moments candides dans les rues de la ville avec une narration visuelle"
       },
       "ecommerce": {
-        "title": "Plateforme de Commerce Électronique",
-        "description": "Site web de commerce électronique full-stack avec panier d'achat, passerelle de paiement et tableau de bord d'administration"
+        "title": "Site Web de Commerce Électronique Full-Stack",
+        "description": "Plateforme SaaS pour la gestion des stocks avec un tableau de bord convivial et des fonctionnalités complètes"
       },
       "event": {
         "title": "Documentation d'Événements",
