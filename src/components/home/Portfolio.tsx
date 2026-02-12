@@ -158,11 +158,11 @@ const Portfolio = () => {
                     </a>
                   </div>
 
-                  <div className="p-6 space-y-4">
-                    <h3 className="font-display text-xl font-bold group-hover:text-primary transition-colors">
+                  <div className="p-4 md:p-6 space-y-3 md:space-y-4">
+                    <h3 className="font-display text-lg md:text-xl font-bold group-hover:text-primary transition-colors">
                       {title}
                     </h3>
-                    <p className="text-muted-foreground text-sm">
+                    <p className="text-muted-foreground text-xs md:text-sm">
                       {t(project.descriptionKey)}
                     </p>
                     <div className="flex flex-wrap gap-2">

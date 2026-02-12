@@ -75,18 +75,18 @@ const Skills = () => {
                 className="group hover:shadow-glow transition-all duration-300 hover:-translate-y-2 bg-card/50 backdrop-blur-sm border-border/50"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <CardContent className="p-6 space-y-4">
-                  <div className="flex items-center gap-3">
-                    <div className={`p-3 rounded-lg bg-gradient-primary/10 ${category.color} group-hover:scale-110 transition-transform duration-300`}>
-                      <Icon className="w-6 h-6" />
+                <CardContent className="p-3 md:p-6 space-y-2 md:space-y-4">
+                  <div className="flex items-center gap-2 md:gap-3">
+                    <div className={`p-2 md:p-3 rounded-lg bg-gradient-primary/10 ${category.color} group-hover:scale-110 transition-transform duration-300`}>
+                      <Icon className="w-4 h-4 md:w-6 md:h-6" />
                     </div>
-                    <h3 className="text-xl font-semibold">{category.title}</h3>
+                    <h3 className="text-sm md:text-xl font-semibold">{category.title}</h3>
                   </div>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1 md:gap-2">
                     {category.skills.map((skill, idx) => (
                       <span 
                         key={idx}
-                        className="px-3 py-1 rounded-full bg-muted/50 text-muted-foreground text-sm hover:bg-primary/20 hover:text-primary transition-colors duration-200"
+                        className="px-2 py-0.5 md:px-3 md:py-1 rounded-full bg-muted/50 text-muted-foreground text-[10px] md:text-sm hover:bg-primary/20 hover:text-primary transition-colors duration-200"
                       >
                         {skill}
                       </span>
