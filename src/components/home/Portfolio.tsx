@@ -99,17 +99,17 @@ const Portfolio = () => {
       <div className="container px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold">
+          <div className="text-center mb-8 md:mb-16 space-y-3 md:space-y-4">
+            <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-bold">
               {t('portfolio.title')} <span className="text-primary">{t('portfolio.titleHighlight')}</span>
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-sm md:text-xl text-muted-foreground max-w-2xl mx-auto px-2">
               {t('portfolio.subtitle')}
             </p>
           </div>
 
           {/* Filter */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-12">
             {categories.map((cat) => {
               const Icon = cat.icon;
               const isActive = activeCategory === cat.id;
@@ -117,13 +117,13 @@ const Portfolio = () => {
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id as Category)}
-                  className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center gap-2 ${
+                  className={`px-4 py-2 md:px-6 md:py-3 rounded-lg text-sm md:text-base font-medium transition-all duration-300 flex items-center gap-1.5 md:gap-2 ${
                     isActive
                       ? "bg-primary text-primary-foreground shadow-glow"
                       : "bg-card text-muted-foreground hover:bg-card/80 border border-border"
                   }`}
                 >
-                  <Icon className="w-4 h-4" />
+                  <Icon className="w-3.5 h-3.5 md:w-4 md:h-4" />
                   {cat.label}
                 </button>
               );
@@ -131,7 +131,7 @@ const Portfolio = () => {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {filteredProjects.map((project) => {
               const title = t(project.titleKey);
               return (
@@ -158,11 +158,11 @@ const Portfolio = () => {
                     </a>
                   </div>
 
-                  <div className="p-6 space-y-4">
-                    <h3 className="font-display text-xl font-bold group-hover:text-primary transition-colors">
+                  <div className="p-4 md:p-6 space-y-3 md:space-y-4">
+                    <h3 className="font-display text-lg md:text-xl font-bold group-hover:text-primary transition-colors">
                       {title}
                     </h3>
-                    <p className="text-muted-foreground text-sm">
+                    <p className="text-muted-foreground text-xs md:text-sm">
                       {t(project.descriptionKey)}
                     </p>
                     <div className="flex flex-wrap gap-2">
