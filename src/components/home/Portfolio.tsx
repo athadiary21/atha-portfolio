@@ -109,7 +109,7 @@ const Portfolio = () => {
           </div>
 
           {/* Filter */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-12">
             {categories.map((cat) => {
               const Icon = cat.icon;
               const isActive = activeCategory === cat.id;
@@ -117,13 +117,13 @@ const Portfolio = () => {
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id as Category)}
-                  className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 flex items-center gap-2 ${
+                  className={`px-4 py-2 md:px-6 md:py-3 rounded-lg text-sm md:text-base font-medium transition-all duration-300 flex items-center gap-1.5 md:gap-2 ${
                     isActive
                       ? "bg-primary text-primary-foreground shadow-glow"
                       : "bg-card text-muted-foreground hover:bg-card/80 border border-border"
                   }`}
                 >
-                  <Icon className="w-4 h-4" />
+                  <Icon className="w-3.5 h-3.5 md:w-4 md:h-4" />
                   {cat.label}
                 </button>
               );
