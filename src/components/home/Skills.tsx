@@ -56,11 +56,11 @@ const Skills = () => {
     >
       <div className="container px-4 md:px-6">
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
+        <div className="text-center mb-8 md:mb-16 animate-fade-in">
+          <h2 className="text-3xl md:text-5xl font-bold mb-3 md:mb-4 bg-gradient-primary bg-clip-text text-transparent">
             {t('skills.title')}
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm md:text-lg px-2">
             {t('skills.subtitle')}
           </p>
         </div>
