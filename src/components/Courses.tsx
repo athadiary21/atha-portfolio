@@ -21,12 +21,12 @@ const Courses = () => {
     >
       <div className="container px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold">
+          <div className="text-center mb-8 md:mb-16 space-y-3 md:space-y-4">
+            <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-bold">
               {t('homeCourses.title')}{" "}
               <span className="text-primary">{t('homeCourses.titleHighlight')}</span>
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-sm md:text-xl text-muted-foreground max-w-2xl mx-auto px-2">
               {t('homeCourses.subtitle')}
             </p>
           </div>
