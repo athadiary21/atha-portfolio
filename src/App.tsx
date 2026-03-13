@@ -8,6 +8,11 @@ import Index from "./pages/Index";
 import Courses from "./pages/Courses";
 import CourseViewer from "./pages/CourseViewer";
 import QuizHistory from "./pages/QuizHistory";
+import AdminLogin from "./pages/AdminLogin";
+import AdminArticles from "./pages/AdminArticles";
+import ArticleEditor from "./pages/ArticleEditor";
+import Articles from "./pages/Articles";
+import ArticleView from "./pages/ArticleView";
 import NotFound from "./pages/NotFound";
 import ErrorBoundary from "./components/common/ErrorBoundary";
 
@@ -26,6 +31,12 @@ const App = () => (
               <Route path="/courses" element={<Courses />} />
               <Route path="/course/:courseId" element={<CourseViewer />} />
               <Route path="/quiz-history" element={<QuizHistory />} />
+              <Route path="/admin/login" element={<AdminLogin />} />
+              <Route path="/admin/articles" element={<AdminArticles />} />
+              <Route path="/admin/articles/new" element={<ArticleEditor />} />
+              <Route path="/admin/articles/edit/:id" element={<ArticleEditor />} />
+              <Route path="/articles" element={<Articles />} />
+              <Route path="/articles/:slug" element={<ArticleView />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
