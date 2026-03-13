@@ -8,6 +8,11 @@ import Index from "./pages/Index";
 import Courses from "./pages/Courses";
 import CourseViewer from "./pages/CourseViewer";
 import QuizHistory from "./pages/QuizHistory";
+import AdminLogin from "./pages/AdminLogin";
+import AdminArticles from "./pages/AdminArticles";
+import ArticleEditor from "./pages/ArticleEditor";
+import Articles from "./pages/Articles";
+import ArticleView from "./pages/ArticleView";
 import NotFound from "./pages/NotFound";
 import ErrorBoundary from "./components/common/ErrorBoundary";
 
