@@ -7,8 +7,9 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Switch } from '@/components/ui/switch';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Header from '@/components/layout/Header';
-import { Save, Upload, Image as ImageIcon } from 'lucide-react';
+import { Save, Upload, Eye, Pencil } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const ArticleEditor = () => {
@@ -191,15 +192,41 @@ const ArticleEditor = () => {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="content">Konten Artikel (HTML)</Label>
-          <Textarea
-            id="content"
-            placeholder="Tulis konten artikel di sini... Mendukung HTML"
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
-            rows={20}
-            className="font-mono text-sm"
-          />
+          <Label>Konten Artikel</Label>
+          <Tabs defaultValue="edit" className="w-full">
+            <TabsList className="mb-2">
+              <TabsTrigger value="edit" className="gap-2">
+                <Pencil className="w-4 h-4" /> Editor
+              </TabsTrigger>
+              <TabsTrigger value="preview" className="gap-2">
+                <Eye className="w-4 h-4" /> Preview
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent value="edit">
+              <Textarea
+                id="content"
+                placeholder="Tulis konten artikel di sini... Mendukung HTML"
+                value={content}
+                onChange={(e) => setContent(e.target.value)}
+                rows={20}
+                className="font-mono text-sm"
+              />
+            </TabsContent>
+            <TabsContent value="preview">
+              <div className="min-h-[400px] border border-border rounded-lg p-6 bg-card">
+                {content ? (
+                  <article className="prose prose-lg dark:prose-invert max-w-none">
+                    {title && <h1>{title}</h1>}
+                    <div dangerouslySetInnerHTML={{ __html: content }} />
+                  </article>
+                ) : (
+                  <p className="text-muted-foreground text-center py-12">
+                    Belum ada konten untuk di-preview
+                  </p>
+                )}
+              </div>
+            </TabsContent>
+          </Tabs>
         </div>
       </main>
     </div>
