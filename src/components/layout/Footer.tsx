@@ -13,6 +13,10 @@ const Footer = () => {
               © {currentYear} Atha Rasyid. {t('footer.copyright')}
             </p>
             <p>Made in Indonesian (+62)</p>
+            <div className="flex gap-4 text-sm text-muted-foreground">
+              <a href="/articles" className="hover:text-foreground transition-colors">Artikel</a>
+              <a href="/courses" className="hover:text-foreground transition-colors">Courses</a>
+            </div>
           </div>
         </div>
       </div>

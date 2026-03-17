@@ -71,6 +71,9 @@ const Hero = () => {
             <Button variant="hero" size="lg" onClick={() => navigate('/courses')} className="text-base bg-slate-900 hover:bg-slate-800">
               {t('hero.learning')}
             </Button>
+            <Button variant="hero" size="lg" onClick={() => navigate('/articles')} className="text-base bg-slate-900 hover:bg-slate-800">
+              Artikel
+            </Button>
           </div>
         </div>
       </div>
