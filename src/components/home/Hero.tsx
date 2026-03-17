@@ -69,7 +69,7 @@ const Hero = () => {
               <Mail className="ml-2 h-4 w-4" />
             </Button>
             <Button variant="hero" size="lg" onClick={() => navigate('/courses')} className="text-base bg-slate-900 hover:bg-slate-800">
-              Courses 📚
+              {t('hero.learning')}
             </Button>
             <Button variant="hero" size="lg" onClick={() => navigate('/articles')} className="text-base bg-slate-900 hover:bg-slate-800">
               Artikel
