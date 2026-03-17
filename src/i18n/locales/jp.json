@@ -98,9 +98,9 @@
   },
   "homeCourses": {
     "title": "私の",
-    "titleHighlight": "ブログを探る 📚",
+    "titleHighlight": "コースを探る 📚",
     "subtitle": "私が作成した様々なトピックのコース集をご覧ください。",
-    "seeAll": "すべてのブログを見る 📚"
+    "seeAll": "すべてのコースを見る 📚"
   },
   "courses": {
     "title": "学習",
