@@ -6,7 +6,7 @@
     "description": "Combining photography, coding, and artistic creativity into stunning masterpieces",
     "viewWork": "View My Work",
     "contactMe": "Contact Me",
-    "learning": "Blog  📚"
+    "learning": "Courses 📚"
   },
   "about": {
     "subtitle": "About Atha Rasyid",
@@ -98,9 +98,9 @@
   },
   "homeCourses": {
     "title": "Explore My ",
-    "titleHighlight": "Blog 📚",
+    "titleHighlight": "Courses 📚",
     "subtitle": "Browse through a collection of courses I've created on various topics.",
-    "seeAll": "See All Blog 📚"
+    "seeAll": "See All Courses 📚"
   },
   "courses": {
     "title": "Learning",

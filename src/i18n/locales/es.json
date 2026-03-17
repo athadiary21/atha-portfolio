@@ -6,7 +6,7 @@
     "description": "Combinando fotografía, codificación y creatividad artística en impresionantes obras maestras",
     "viewWork": "Ver Mi Trabajo",
     "contactMe": "Contáctame",
-    "learning": "Blog 📚"
+    "learning": "Cursos 📚"
   },
   "about": {
     "subtitle": "Sobre Atha Rasyid",
@@ -97,10 +97,10 @@
     "copyright": "Todos los derechos reservados."
   },
   "homeCourses": {
-    "title": "Explora Mi ",
-    "titleHighlight": "Blog 📚",
+    "title": "Explora Mis ",
+    "titleHighlight": "Cursos 📚",
     "subtitle": "Navega a través de una colección de cursos que he creado sobre diversos temas.",
-    "seeAll": "Ver Todo el Blog 📚"
+    "seeAll": "Ver Todos los Cursos 📚"
   },
   "courses": {
     "title": "Aprendizaje",

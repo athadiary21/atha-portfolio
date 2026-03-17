@@ -6,7 +6,7 @@
     "description": "写真、コーディング、芸術的創造性を組み合わせて、見事な傑作を生み出します",
     "viewWork": "私の作品を見る",
     "contactMe": "お問い合わせ",
-    "learning": "ブログ 📚"
+    "learning": "コース 📚"
   },
   "about": {
     "subtitle": "Atha Rasyidについて",
@@ -98,9 +98,9 @@
   },
   "homeCourses": {
     "title": "私の",
-    "titleHighlight": "ブログを探る 📚",
+    "titleHighlight": "コースを探る 📚",
     "subtitle": "私が作成した様々なトピックのコース集をご覧ください。",
-    "seeAll": "すべてのブログを見る 📚"
+    "seeAll": "すべてのコースを見る 📚"
   },
   "courses": {
     "title": "学習",
