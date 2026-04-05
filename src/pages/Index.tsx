@@ -5,7 +5,6 @@ import Skills from "@/components/home/Skills";
 import Contact from "@/components/home/Contact";
 import Footer from "@/components/layout/Footer";
 import LanguageToggle from "@/components/common/LanguageToggle";
-import Courses from "@/components/Courses";
 import SEO from "@/components/common/SEO";
 import { useTranslation } from "react-i18next";
 
@@ -22,7 +21,6 @@ const Index = () => {
       <Hero />
       <About />
       <Portfolio />
-      <Courses />
       <Skills />
       <Contact />
       <Footer />

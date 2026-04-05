@@ -5,9 +5,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
 import Index from "./pages/Index";
-import Courses from "./pages/Courses";
-import CourseViewer from "./pages/CourseViewer";
-import QuizHistory from "./pages/QuizHistory";
 import AdminLogin from "./pages/AdminLogin";
 import AdminArticles from "./pages/AdminArticles";
 import ArticleEditor from "./pages/ArticleEditor";
@@ -28,9 +25,6 @@ const App = () => (
           <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/courses" element={<Courses />} />
-              <Route path="/course/:courseId" element={<CourseViewer />} />
-              <Route path="/quiz-history" element={<QuizHistory />} />
               <Route path="/admin/login" element={<AdminLogin />} />
               <Route path="/admin/articles" element={<AdminArticles />} />
               <Route path="/admin/articles/new" element={<ArticleEditor />} />
