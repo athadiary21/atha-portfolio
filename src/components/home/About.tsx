@@ -116,8 +116,8 @@ const About = () => {
                 </TabsContent>
               </Tabs>
 
-              {/* Portfolio Button */}
-              <div>
+              {/* Portfolio Button & Social Links */}
+              <div className="flex items-center gap-4 flex-wrap">
                 <Button
                   variant="outline"
                   size="lg"
@@ -126,24 +126,20 @@ const About = () => {
                 >
                   {t('about.portfolioButton')} →
                 </Button>
+                {socialLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-card/80 backdrop-blur-sm border border-border/50 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-300 hover:scale-110"
+                    aria-label={link.label}
+                  >
+                    <link.icon className="w-5 h-5" />
+                  </a>
+                ))}
               </div>
             </div>
-          </div>
-
-          {/* Social Links - Mobile */}
-          <div className="flex lg:hidden justify-center gap-4 mt-12">
-            {socialLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 rounded-full bg-muted/50 hover:bg-primary hover:text-primary-foreground flex items-center justify-center transition-all duration-300"
-                aria-label={link.label}
-              >
-                <link.icon className="w-5 h-5" />
-              </a>
-            ))}
           </div>
         </div>
       </div>
