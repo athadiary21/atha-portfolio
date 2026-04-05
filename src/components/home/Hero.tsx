@@ -37,7 +37,7 @@ const Hero = () => {
             ))}
           </CarouselContent>
         </Carousel>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/30 to-background/80" />
       </div>
 
       {/* Content */}
