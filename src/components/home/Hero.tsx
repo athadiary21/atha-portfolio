@@ -8,32 +8,33 @@ import heroImage1 from "@/assets/hero-bg.jpg";
 import heroImage2 from "@/assets/hero-bg-2.jpg";
 import heroImage3 from "@/assets/hero-bg-3.jpg";
 import heroImage4 from "@/assets/hero-bg-4.jpg";
+
 const Hero = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const heroImages = [heroImage1, heroImage2, heroImage3, heroImage4];
+
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({
       behavior: "smooth"
     });
   };
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Carousel */}
       <div className="absolute inset-0 bg-gradient-subtle">
-        <Carousel opts={{
-        align: "start",
-        loop: true
-      }} plugins={[Autoplay({
-        delay: 5000
-      })]} className="absolute inset-0">
+        <Carousel opts={{ align: "start", loop: true }} plugins={[Autoplay({ delay: 5000 })]} className="absolute inset-0">
           <CarouselContent className="h-screen">
-            {heroImages.map((image, index) => <CarouselItem key={index} className="relative h-screen">
+            {heroImages.map((image, index) => (
+              <CarouselItem key={index} className="relative h-screen">
                 <div className="absolute inset-0 opacity-20" style={{
-              backgroundImage: `url(${image})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center'
-            }} />
-              </CarouselItem>)}
+                  backgroundImage: `url(${image})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }} />
+              </CarouselItem>
+            ))}
           </CarouselContent>
         </Carousel>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
@@ -68,9 +69,6 @@ const Hero = () => {
               {t('hero.contactMe')}
               <Mail className="ml-2 h-4 w-4" />
             </Button>
-            <Button variant="hero" size="lg" onClick={() => navigate('/courses')} className="text-base bg-slate-900 hover:bg-slate-800">
-              {t('hero.learning')}
-            </Button>
             <Button variant="hero" size="lg" onClick={() => navigate('/articles')} className="text-base bg-slate-900 hover:bg-slate-800">
               Artikel
             </Button>
@@ -82,6 +80,8 @@ const Hero = () => {
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <ArrowDown className="w-6 h-6 text-muted-foreground" />
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;
