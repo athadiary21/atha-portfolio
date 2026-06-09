@@ -7,7 +7,6 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { Camera, Code, Sparkles } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { CardStack, type CardStackItem } from "@/components/ui/card-stack";
@@ -82,24 +81,12 @@ const projects: Project[] = [
 
 const Portfolio = () => {
   const { t } = useTranslation();
-  const [activeCategory, setActiveCategory] = useState<Category>("all");
   const [selected, setSelected] = useState<Project | null>(null);
   const { ref: sectionRef, isVisible } = useScrollAnimation();
 
-  const categories = [
-    { id: "all", label: t("portfolio.filterAll"), icon: Sparkles },
-    { id: "photography", label: t("portfolio.filterPhoto"), icon: Camera },
-    { id: "coding", label: t("portfolio.filterCode"), icon: Code },
-  ];
-
-  const filteredProjects =
-    activeCategory === "all"
-      ? projects
-      : projects.filter((p) => p.category === activeCategory);
-
   const stackItems: (CardStackItem & { project: Project })[] = useMemo(
     () =>
-      filteredProjects.map((p) => ({
+      projects.map((p) => ({
         id: p.id,
         title: t(p.titleKey),
         description: t(p.descriptionKey),
@@ -107,8 +94,9 @@ const Portfolio = () => {
         tag: p.tags[0],
         project: p,
       })),
-    [filteredProjects, t]
+    [t]
   );
+
 
   return (
     <section
@@ -131,32 +119,12 @@ const Portfolio = () => {
             </p>
           </div>
 
-          {/* Filter */}
-          <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-12">
-            {categories.map((cat) => {
-              const Icon = cat.icon;
-              const isActive = activeCategory === cat.id;
-              return (
-                <button
-                  key={cat.id}
-                  onClick={() => setActiveCategory(cat.id as Category)}
-                  className={`px-4 py-2 md:px-6 md:py-3 rounded-lg text-sm md:text-base font-medium transition-all duration-300 flex items-center gap-1.5 md:gap-2 ${
-                    isActive
-                      ? "bg-primary text-primary-foreground shadow-glow"
-                      : "bg-card text-muted-foreground hover:bg-card/80 border border-border"
-                  }`}
-                >
-                  <Icon className="w-3.5 h-3.5 md:w-4 md:h-4" />
-                  {cat.label}
-                </button>
-              );
-            })}
-          </div>
+
+
 
           {/* Card Stack */}
           <div className="overflow-hidden">
             <CardStack
-              key={activeCategory}
               items={stackItems}
               cardWidth={480}
               cardHeight={300}
