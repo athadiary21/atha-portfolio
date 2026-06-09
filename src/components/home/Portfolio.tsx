@@ -1,5 +1,4 @@
-import { useRef, useState } from "react";
-import { Card } from "@/components/ui/card";
+import { useMemo, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import {
   Dialog,
@@ -8,9 +7,10 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { Camera, Code, Sparkles, ArrowUpRight } from "lucide-react";
+import { Camera, Code, Sparkles } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { CardStack, type CardStackItem } from "@/components/ui/card-stack";
 import streetPhoto from "@/assets/portfolio/street-photography.jpg";
 import productPhoto from "@/assets/portfolio/product-photography.jpg";
 import portfolioWebsite from "@/assets/portfolio/portfolio-website.png";
