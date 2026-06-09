@@ -170,8 +170,7 @@ const Portfolio = () => {
             />
           </div>
           <p className="mt-4 text-center text-xs text-muted-foreground md:text-sm">
-            {t("portfolio.subtitle") ? "" : ""}
-            Drag • klik kartu aktif untuk detail
+            Drag atau klik kartu aktif untuk melihat detail
           </p>
         </div>
       </div>
