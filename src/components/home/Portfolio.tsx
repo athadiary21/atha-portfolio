@@ -80,93 +80,6 @@ const projects: Project[] = [
   },
 ];
 
-// Bento span pattern based on position so layout stays balanced under filtering.
-const bentoSpan = (index: number) => {
-  if (index === 0) return "md:col-span-2 lg:row-span-2";
-  if (index === 3) return "lg:col-span-2";
-  return "";
-};
-
-interface TiltCardProps {
-  project: Project;
-  spanClass: string;
-  onOpen: (p: Project) => void;
-}
-
-const TiltCard = ({ project, spanClass, onOpen }: TiltCardProps) => {
-  const { t } = useTranslation();
-  const ref = useRef<HTMLDivElement>(null);
-  const [transform, setTransform] = useState<string>("");
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const el = ref.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    const max = 6;
-    setTransform(
-      `perspective(900px) rotateY(${x * max}deg) rotateX(${-y * max}deg) scale(1.02)`
-    );
-  };
-
-  const handleMouseLeave = () => setTransform("");
-
-  const title = t(project.titleKey);
-
-  return (
-    <div
-      ref={ref}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      onClick={() => onOpen(project)}
-      className={`group relative cursor-pointer ${spanClass}`}
-      style={{ transform, transition: "transform 0.25s ease-out" }}
-    >
-      <Card className="relative h-full min-h-[220px] overflow-hidden bg-card/50 backdrop-blur-sm border-border/50 transition-shadow duration-300 group-hover:shadow-glow">
-        {/* Image */}
-        <div className="absolute inset-0">
-          <img
-            src={project.image}
-            alt={title}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-          />
-        </div>
-
-        {/* Gradient scrim */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-90" />
-
-        {/* Glow ring on hover */}
-        <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-primary/0 group-hover:ring-primary/40 transition-all duration-300" />
-
-        {/* Content */}
-        <div className="relative z-10 flex h-full flex-col justify-end p-4 md:p-6">
-          <div className="flex items-center gap-2 mb-2 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-            {project.tags.map((tag) => (
-              <Badge key={tag} variant="secondary" className="text-[10px] md:text-xs">
-                {tag}
-              </Badge>
-            ))}
-          </div>
-          <div className="flex items-end justify-between gap-2">
-            <div>
-              <h3 className="font-display text-lg md:text-2xl font-bold leading-tight">
-                {title}
-              </h3>
-              <p className="text-muted-foreground text-xs md:text-sm mt-1 max-h-0 overflow-hidden opacity-0 group-hover:max-h-20 group-hover:opacity-100 transition-all duration-500">
-                {t(project.descriptionKey)}
-              </p>
-            </div>
-            <span className="shrink-0 w-9 h-9 rounded-full bg-primary/90 text-primary-foreground flex items-center justify-center translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-              <ArrowUpRight className="w-4 h-4" />
-            </span>
-          </div>
-        </div>
-      </Card>
-    </div>
-  );
-};
-
 const Portfolio = () => {
   const { t } = useTranslation();
   const [activeCategory, setActiveCategory] = useState<Category>("all");
@@ -183,6 +96,19 @@ const Portfolio = () => {
     activeCategory === "all"
       ? projects
       : projects.filter((p) => p.category === activeCategory);
+
+  const stackItems: (CardStackItem & { project: Project })[] = useMemo(
+    () =>
+      filteredProjects.map((p) => ({
+        id: p.id,
+        title: t(p.titleKey),
+        description: t(p.descriptionKey),
+        imageSrc: p.image,
+        tag: p.tags[0],
+        project: p,
+      })),
+    [filteredProjects, t]
+  );
 
   return (
     <section
