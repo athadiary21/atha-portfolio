@@ -82,24 +82,12 @@ const projects: Project[] = [
 
 const Portfolio = () => {
   const { t } = useTranslation();
-  const [activeCategory, setActiveCategory] = useState<Category>("all");
   const [selected, setSelected] = useState<Project | null>(null);
   const { ref: sectionRef, isVisible } = useScrollAnimation();
 
-  const categories = [
-    { id: "all", label: t("portfolio.filterAll"), icon: Sparkles },
-    { id: "photography", label: t("portfolio.filterPhoto"), icon: Camera },
-    { id: "coding", label: t("portfolio.filterCode"), icon: Code },
-  ];
-
-  const filteredProjects =
-    activeCategory === "all"
-      ? projects
-      : projects.filter((p) => p.category === activeCategory);
-
   const stackItems: (CardStackItem & { project: Project })[] = useMemo(
     () =>
-      filteredProjects.map((p) => ({
+      projects.map((p) => ({
         id: p.id,
         title: t(p.titleKey),
         description: t(p.descriptionKey),
@@ -107,8 +95,9 @@ const Portfolio = () => {
         tag: p.tags[0],
         project: p,
       })),
-    [filteredProjects, t]
+    [t]
   );
+
 
   return (
     <section
