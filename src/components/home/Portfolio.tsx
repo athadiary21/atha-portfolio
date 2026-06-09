@@ -126,7 +126,6 @@ const Portfolio = () => {
           {/* Card Stack */}
           <div className="overflow-hidden">
             <CardStack
-              key={activeCategory}
               items={stackItems}
               cardWidth={480}
               cardHeight={300}
