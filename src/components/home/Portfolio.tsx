@@ -153,17 +153,26 @@ const Portfolio = () => {
             })}
           </div>
 
-          {/* Bento Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[220px] md:auto-rows-[240px] gap-4 md:gap-6">
-            {filteredProjects.map((project, index) => (
-              <TiltCard
-                key={project.id}
-                project={project}
-                spanClass={bentoSpan(index)}
-                onOpen={setSelected}
-              />
-            ))}
+          {/* Card Stack */}
+          <div className="overflow-hidden">
+            <CardStack
+              key={activeCategory}
+              items={stackItems}
+              cardWidth={480}
+              cardHeight={300}
+              autoAdvance
+              loop
+              className="mx-auto max-w-full"
+              onActivate={(item) => {
+                const found = stackItems.find((s) => s.id === item.id);
+                if (found) setSelected(found.project);
+              }}
+            />
           </div>
+          <p className="mt-4 text-center text-xs text-muted-foreground md:text-sm">
+            {t("portfolio.subtitle") ? "" : ""}
+            Drag • klik kartu aktif untuk detail
+          </p>
         </div>
       </div>
 
